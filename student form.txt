@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+
+    <h1 align="center">STUDENT REGISTRATION FORM</h1>
+
+    <form>
+
+        <!-- LEFT SECTION -->
+        <section align="left">
+
+            <fieldset>
+                <legend><b>Student Profile</b></legend>
+
+                First Name:
+                <input type="text"><br><br>
+
+                Last Name:
+                <input type="text"><br><br>
+
+                USN:
+                <input type="text"><br><br>
+
+                Email:
+                <input type="email"><br><br>
+
+                Phone:
+                <input type="tel"><br><br>
+
+                College Email ID:
+                <input type="email"><br><br>
+
+                Gender:
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender">Female
+                <input type="radio" name="gender">Other
+
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend><b>Contact Details</b></legend>
+
+                Address:<br>
+
+                <textarea rows="4" cols="35"></textarea>
+
+                <br><br>
+
+                City:
+                <input type="text"><br><br>
+
+                State:
+                <select>
+                    <option>Maharashtra</option>
+                    <option>Delhi</option>
+                    <option>Gujarat</option>
+                </select>
+
+                <br><br>
+
+                Pincode:
+                <input type="number">
+
+            </fieldset>
+
+        </section>
+
+        <hr>
+
+        <!-- RIGHT SECTION -->
+        <section align="left">
+
+            <fieldset>
+                <legend><b>Academic Information</b></legend>
+
+                Course:
+                <select>
+                    <option>B.Tech</option>
+                    <option>BCA</option>
+                    <option>B.Sc</option>
+                </select>
+
+                <br><br>
+
+                Branch:
+                <select>
+                    <option>CSE</option>
+                    <option>AIML</option>
+                    <option>IT</option>
+                </select>
+
+                <br><br>
+
+                CGPA:
+                <input type="number"><br><br>
+
+                Upload Passport size photo:
+                <input type="file">
+
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend><b>Extra Activities</b></legend>
+
+                <input type="checkbox">Sports<br>
+                <input type="checkbox">Music<br>
+                <input type="checkbox">Reading<br>
+                <input type="checkbox">Coding
+
+                <br><br>
+
+                Confidence:
+                <input type="range">
+
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend><b>Review & Submit</b></legend>
+
+                Date:
+                <input type="date"><br><br>
+
+                Signature:
+                <input type="text"><br><br>
+
+                Password:
+                <input type="password"><br><br>
+
+                <input type="checkbox">
+                I agree to the terms.
+
+                <br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+
+            </fieldset>
+
+        </section>
+
+    </form>
+
+</body>
+
+</html>
