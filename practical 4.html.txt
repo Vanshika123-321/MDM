@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PureGlow | Botanical Facewash Collection</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-emerald-50/40 text-stone-800 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-emerald-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <span class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-serif text-lg font-bold">P</span>
+        <span class="font-serif text-xl font-bold tracking-wide text-stone-900">PURE<span class="text-emerald-700">GLOW</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+        <a href="#collection" class="text-emerald-700 font-semibold">Facewash Collection</a>
+        <a href="#" class="hover:text-emerald-700 transition-colors">Skin Quiz</a>
+        <a href="#" class="hover:text-emerald-700 transition-colors">Ingredients</a>
+        <a href="#" class="hover:text-emerald-700 transition-colors">Our Story</a>
+      </nav>
+
+      <!-- Cart & Search Actions -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button aria-label="Search" class="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <button aria-label="Shopping Bag" class="p-2 text-stone-600 hover:text-emerald-700 transition-colors relative">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="absolute top-1 right-1 w-2 h-2 bg-emerald-600 rounded-full"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-r from-emerald-900 to-teal-900 text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div class="max-w-xl">
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase text-emerald-300 bg-emerald-800/60 border border-emerald-700 px-3 py-1 rounded-full mb-3">
+            100% Organic & Vegan
+          </span>
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Gentle Cleansing for Every Skin Type
+          </h1>
+          <p class="text-emerald-100 text-base sm:text-lg leading-relaxed">
+            Formulated with natural botanicals, essential oils, and dermatologically proven ingredients to nourish and refresh your daily skincare routine.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center">
+          <a href="#collection" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-stone-900 font-semibold rounded-xl text-center transition-colors shadow-lg shadow-emerald-950/40">
+            Shop Cleansers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="collection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      
+      <!-- Filter Bar using Flexbox -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-4 border-b border-emerald-100">
+        <div>
+          <h2 class="font-serif text-2xl font-bold text-stone-900">Facewash Collection</h2>
+          <p class="text-xs sm:text-sm text-stone-500 mt-1">Find the perfect cleanser for your unique skin needs</p>
+        </div>
+
+        <!-- Filter Pills (Scrollable on Mobile) -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+          <button class="px-4 py-2 bg-emerald-800 text-white text-xs font-medium rounded-full shrink-0">All Cleansers</button>
+          <button class="px-4 py-2 bg-white border border-stone-200 text-stone-600 hover:border-emerald-500 text-xs font-medium rounded-full shrink-0 transition-colors">Oily & Acne-Prone</button>
+          <button class="px-4 py-2 bg-white border border-stone-200 text-stone-600 hover:border-emerald-500 text-xs font-medium rounded-full shrink-0 transition-colors">Dry & Sensitive</button>
+          <button class="px-4 py-2 bg-white border border-stone-200 text-stone-600 hover:border-emerald-500 text-xs font-medium rounded-full shrink-0 transition-colors">Gentle Exfoliating</button>
+        </div>
+      </div>
+
+      <!-- Responsive Product Grid using Flexbox -->
+      <!-- Breakpoints: Mobile (1 col) -> Tablet/sm (2 cols) -> Desktop/lg (4 cols) -->
+      <div class="flex flex-wrap -mx-3">
+
+        <!-- Product Card 1 -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 p-3 flex">
+          <div class="bg-white rounded-2xl border border-stone-200/80 overflow-hidden flex flex-col justify-between w-full hover:shadow-lg transition-shadow duration-300 group">
+            <div>
+              <div class="relative bg-emerald-50/50 aspect-square overflow-hidden flex items-center justify-center p-6">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Tea Tree Deep Foaming Cleanser" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-3 left-3 bg-emerald-700 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Bestseller</span>
+              </div>
+              <div class="p-5">
+                <span class="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">Oily & Combination</span>
+                <h3 class="font-serif font-bold text-stone-900 text-lg mt-1 group-hover:text-emerald-700 transition-colors">Tea Tree Deep Foaming Cleanser</h3>
+                <p class="text-stone-500 text-xs sm:text-sm mt-2 line-clamp-2">Purifies pores, controls excess sebum, and fights breakouts with organic tea tree and salicylic acid.</p>
+              </div>
+            </div>
+            <div class="p-5 pt-0 border-t border-stone-100 mt-4 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] uppercase text-stone-400 block font-medium">150 ml</span>
+                <span class="text-lg font-bold text-stone-900">₹2200</span>
+              </div>
+              <button class="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-semibold rounded-xl transition-colors">
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 p-3 flex">
+          <div class="bg-white rounded-2xl border border-stone-200/80 overflow-hidden flex flex-col justify-between w-full hover:shadow-lg transition-shadow duration-300 group">
+            <div>
+              <div class="relative bg-emerald-50/50 aspect-square overflow-hidden flex items-center justify-center p-6">
+                <img src="https://images.apollo247.in/pub/media/catalog/product/n/m/nmf0009_1.jpg?tr=q-80,f-webp,w-400,dpr-3,c-at_max%20400w" alt="Hydrating Aloe & Oat Milk Wash" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">New</span>
+              </div>
+              <div class="p-5">
+                <span class="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">Dry & Sensitive</span>
+                <h3 class="font-serif font-bold text-stone-900 text-lg mt-1 group-hover:text-emerald-700 transition-colors">Hydrating Aloe & Oat Milk Wash</h3>
+                <p class="text-stone-500 text-xs sm:text-sm mt-2 line-clamp-2">Soothes redness and restores natural moisture balance without stripping essential oils.</p>
+              </div>
+            </div>
+            <div class="p-5 pt-0 border-t border-stone-100 mt-4 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] uppercase text-stone-400 block font-medium">200 ml</span>
+                <span class="text-lg font-bold text-stone-900">₹2400</span>
+              </div>
+              <button class="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-semibold rounded-xl transition-colors">
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 p-3 flex">
+          <div class="bg-white rounded-2xl border border-stone-200/80 overflow-hidden flex flex-col justify-between w-full hover:shadow-lg transition-shadow duration-300 group">
+            <div>
+              <div class="relative bg-emerald-50/50 aspect-square overflow-hidden flex items-center justify-center p-6">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Vitamin C Glow Radiance Gel" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5">
+                <span class="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">Dull & Uneven Tone</span>
+                <h3 class="font-serif font-bold text-stone-900 text-lg mt-1 group-hover:text-emerald-700 transition-colors">Vitamin C Radiance Gel</h3>
+                <p class="text-stone-500 text-xs sm:text-sm mt-2 line-clamp-2">Infused with Kakadu Plum and orange blossom to gently brighten dull complexion.</p>
+              </div>
+            </div>
+            <div class="p-5 pt-0 border-t border-stone-100 mt-4 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] uppercase text-stone-400 block font-medium">125 ml</span>
+                <span class="text-lg font-bold text-stone-900">₹2600</span>
+              </div>
+              <button class="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-semibold rounded-xl transition-colors">
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 p-3 flex">
+          <div class="bg-white rounded-2xl border border-stone-200/80 overflow-hidden flex flex-col justify-between w-full hover:shadow-lg transition-shadow duration-300 group">
+            <div>
+              <div class="relative bg-emerald-50/50 aspect-square overflow-hidden flex items-center justify-center p-6">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80" alt="Gentle AHA Exfoliating Jelly" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5">
+                <span class="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">All Skin Types</span>
+                <h3 class="font-serif font-bold text-stone-900 text-lg mt-1 group-hover:text-emerald-700 transition-colors">Gentle AHA Exfoliating Jelly</h3>
+                <p class="text-stone-500 text-xs sm:text-sm mt-2 line-clamp-2">Mild fruit acids remove dead skin cells daily for a smoother, glass-like finish.</p>
+              </div>
+            </div>
+            <div class="p-5 pt-0 border-t border-stone-100 mt-4 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] uppercase text-stone-400 block font-medium">100 ml</span>
+                <span class="text-lg font-bold text-stone-900">₹2800</span>
+              </div>
+              <button class="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-semibold rounded-xl transition-colors">
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-400 py-8 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>© 2026 PureGlow Botanicals. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-emerald-400 transition-colors">Sustainability</a>
+        <a href="#" class="hover:text-emerald-400 transition-colors">Cruelty-Free Guarantee</a>
+        <a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
