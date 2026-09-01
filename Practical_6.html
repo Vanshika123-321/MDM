@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM25061-Vanshika kharwade</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Hide number input arrows */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#0d1529] flex items-center justify-center px-4">
+
+    <!-- Calculator -->
+    <div class="w-full max-w-[430px] bg-[#202c40] border-4 border-[#33445d]
+                rounded-[28px] p-6 shadow-2xl">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-5">
+
+            <h1 class="text-[#9db4d1] text-sm font-bold tracking-widest">
+                GRADE-O-MATIC
+            </h1>
+
+            <span class="bg-[#604b18] text-[#ffc400] border border-[#80651d]
+                         px-2 py-1 rounded text-xs font-bold">
+                MX-300
+            </span>
+
+        </div>
+
+
+        <!-- Result Display -->
+        <div class="bg-[#020718] border-2 border-[#34445d]
+                    rounded-2xl p-4 mb-6">
+
+            <!-- Status + Max -->
+            <div class="flex justify-between text-xs font-mono mb-2">
+
+                <div>
+                    <span class="text-[#8195b2]">STATUS:</span>
+                    <span id="status" class="text-[#00e5a0] ml-1">OK</span>
+                </div>
+
+                <div>
+                    <span class="text-[#8195b2]">MAX:</span>
+                    <span class="text-[#9db4d1]">300</span>
+                </div>
+
+            </div>
+
+
+            <!-- Total -->
+            <div class="flex justify-between items-center pb-2
+                        border-b border-[#26344c]">
+
+                <span class="text-[#9db4d1] text-xs font-mono">
+                    TOTAL:
+                </span>
+
+                <span id="totalDisplay"
+                      class="text-[#00d9ff] text-xl font-bold font-mono">
+                    0 / 300
+                </span>
+
+            </div>
+
+
+            <!-- Percentage + Grade -->
+            <div class="flex items-center justify-between pt-3">
+
+                <span id="percentageDisplay"
+                      class="text-[#00e5a0] text-2xl font-bold font-mono">
+                    0.0%
+                </span>
+
+                <span id="gradeDisplay"
+                      class="bg-[#273449] text-[#ffc400]
+                             px-3 py-2 rounded-md text-xs font-bold">
+                    GRADE: -
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Practical 1 -->
+        <div class="mb-4">
+
+            <label class="block text-[#9db4d1] text-xs font-mono font-bold mb-2">
+                PRACTICAL 01 (MAX 100)
+            </label>
+
+            <input
+                type="number"
+                id="lab1"
+                min="0"
+                max="100"
+                placeholder="87"
+                class="w-full h-14 bg-[#10192c] border-2 border-[#34445d]
+                       rounded-xl px-4 text-right text-[#8fa2ff]
+                       text-xl font-bold outline-none
+                       focus:border-[#5650e9] transition"
+            >
+
+        </div>
+
+
+        <!-- Practical 2 + Viva -->
+        <div class="grid grid-cols-2 gap-3 mb-5">
+
+            <div>
+
+                <label class="block text-[#9db4d1] text-xs font-mono font-bold mb-2">
+                    PRACTICAL 02
+                </label>
+
+                <input
+                    type="number"
+                    id="lab2"
+                    min="0"
+                    max="100"
+                    placeholder="90"
+                    class="w-full h-14 bg-[#10192c] border-2 border-[#34445d]
+                           rounded-xl px-4 text-right text-[#8fa2ff]
+                           text-xl font-bold outline-none
+                           focus:border-[#5650e9] transition"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label class="block text-[#9db4d1] text-xs font-mono font-bold mb-2">
+                    VIVA / ORAL
+                </label>
+
+                <input
+                    type="number"
+                    id="viva"
+                    min="0"
+                    max="100"
+                    placeholder="99"
+                    class="w-full h-14 bg-[#10192c] border-2 border-[#34445d]
+                           rounded-xl px-4 text-right text-[#8fa2ff]
+                           text-xl font-bold outline-none
+                           focus:border-[#5650e9] transition"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="grid grid-cols-[88px_1fr] gap-2">
+
+            <!-- Clear -->
+            <button
+                onclick="clearResult()"
+                class="h-12 bg-[#f01946] hover:bg-[#d9123c]
+                       text-white rounded-xl font-bold
+                       transition active:scale-95"
+            >
+                CLR
+            </button>
+
+
+            <!-- Execute -->
+            <button
+                onclick="calculateResult()"
+                class="h-12 bg-[#5148e8] hover:bg-[#433bd0]
+                       text-white rounded-xl font-bold
+                       tracking-wide transition active:scale-95"
+            >
+                <span class="mr-3">=</span> EXECUTE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function calculateResult() {
+
+            let lab1 = Number(document.getElementById("lab1").value);
+            let lab2 = Number(document.getElementById("lab2").value);
+            let viva = Number(document.getElementById("viva").value);
+
+            let status = document.getElementById("status");
+            let totalDisplay = document.getElementById("totalDisplay");
+            let percentageDisplay = document.getElementById("percentageDisplay");
+            let gradeDisplay = document.getElementById("gradeDisplay");
+
+
+            // Check marks
+            if (
+                lab1 < 0 || lab1 > 100 ||
+                lab2 < 0 || lab2 > 100 ||
+                viva < 0 || viva > 100
+            ) {
+
+                status.textContent = "ERROR";
+                status.classList.remove("text-[#00e5a0]");
+                status.classList.add("text-[#ff1744]");
+
+                totalDisplay.textContent = "INVALID";
+                percentageDisplay.textContent = "--";
+                gradeDisplay.textContent = "GRADE: ERROR";
+
+                return;
+            }
+
+
+            // Calculate total
+            let total = lab1 + lab2 + viva;
+
+            // Calculate percentage
+            let percentage = (total / 300) * 100;
+
+
+            // Calculate grade
+            let grade;
+
+            if (percentage >= 90) {
+                grade = "A+";
+            }
+            else if (percentage >= 80) {
+                grade = "A";
+            }
+            else if (percentage >= 70) {
+                grade = "B";
+            }
+            else if (percentage >= 60) {
+                grade = "C";
+            }
+            else if (percentage >= 50) {
+                grade = "D";
+            }
+            else {
+                grade = "F";
+            }
+
+
+            // Display result
+            status.textContent = "OK";
+            status.classList.remove("text-[#ff1744]");
+            status.classList.add("text-[#00e5a0]");
+
+            totalDisplay.textContent = total + " / 300";
+
+            percentageDisplay.textContent =
+                percentage.toFixed(1) + "%";
+
+            gradeDisplay.textContent =
+                "GRADE: " + grade;
+
+        }
+
+
+        // Clear button
+        function clearResult() {
+
+            document.getElementById("lab1").value = "";
+            document.getElementById("lab2").value = "";
+            document.getElementById("viva").value = "";
+
+            document.getElementById("status").textContent = "OK";
+
+            document.getElementById("totalDisplay").textContent =
+                "0 / 300";
+
+            document.getElementById("percentageDisplay").textContent =
+                "0.0%";
+
+            document.getElementById("gradeDisplay").textContent =
+                "GRADE: -";
+
+        }
+
+    </script>
+
+</body>
+</html>
