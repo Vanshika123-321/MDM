@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical Grade Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: white;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: inline-block;
+            width: 250px;
+            margin: 8px 0;
+        }
+
+        input {
+            width: 80px;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 7px 12px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practical Grade Calculator</h1>
+
+    <label>Lab Practical 1 (out of 100):</label>
+    <input type="number" id="lab1" min="0" max="100">
+    <br>
+
+    <label>Lab Practical 2 (out of 100):</label>
+    <input type="number" id="lab2" min="0" max="100">
+    <br>
+
+    <label>Viva / Oral Exam (out of 100):</label>
+    <input type="number" id="viva" min="0" max="100">
+    <br>
+
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateResult() {
+
+            let lab1 = Number(document.getElementById("lab1").value);
+            let lab2 = Number(document.getElementById("lab2").value);
+            let viva = Number(document.getElementById("viva").value);
+
+            // Check marks
+            if (lab1 < 0 || lab1 > 100 ||
+                lab2 < 0 || lab2 > 100 ||
+                viva < 0 || viva > 100) {
+
+                document.getElementById("result").innerHTML =
+                    "Please enter marks between 0 and 100.";
+
+                return;
+            }
+
+            // Calculate total and percentage
+            let total = lab1 + lab2 + viva;
+            let percentage = (total / 300) * 100;
+
+            // Calculate grade
+            let grade;
+
+            if (percentage >= 90) {
+                grade = "A+ (Excellent)";
+            }
+            else if (percentage >= 80) {
+                grade = "A (Very Good)";
+            }
+            else if (percentage >= 70) {
+                grade = "B (Good)";
+            }
+            else if (percentage >= 60) {
+                grade = "C (Average)";
+            }
+            else if (percentage >= 50) {
+                grade = "D (Pass)";
+            }
+            else {
+                grade = "F (Fail)";
+            }
+
+            // Display result
+            document.getElementById("result").innerHTML =
+                "<b>Total Marks:</b> " + total + " / 300<br><br>" +
+                "<b>Percentage:</b> " + percentage.toFixed(2) + "%<br><br>" +
+                "<b>Grade:</b> " + grade;
+        }
+    </script>
+
+</body>
+</html>
